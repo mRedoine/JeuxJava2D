@@ -15,4 +15,12 @@ Conception d'Applications en JAVA/JEE</u> par Jacques Longchamps<br><br>
   <h4>Patrons utilisés </h4>
   <p>La composition est préférée à l'héritage :-)<br>
   Les moteurs spécifiques sont des composants qui se branchent sur le moteur générique.
-  Au niveau de l'interface utilisateur, la classe GUI contient une JFrame qui déclare la structure en panneaux de l'interface, 2 panneaux sont complètements génériques :classe PanneauControle et PanneauScore (du même paquet)</p>
+  Au niveau de l'interface utilisateur, la classe GUI contient une JFrame qui déclare la structure en panneaux de l'interface, 2 panneaux sont complètements génériques :classe PanneauControle et PanneauScore (du meme paquet). Le panneau d'affichage gère les contrôles clavier(KeyListener), il est en partie générique (classe PanneauJeu de gui.generique) et reçoit des composants qui se branchent dessus.</p>
+  
+  <b>Monteur :</b> Assemblage des compositions<br>
+  <b>Stratégie :</b> Plusieurs manières de gerer les sauvegardes (fichier texte, sérialisation, BD embarquée, etc.)<br>
+  <b>Observeur :</b> Liens entre la classe Moteur(score, niveaux) et le panneau d'affichage(PanneauScore).<br>
+  
+La classe abstraite ObjetJeu est utilisée pour pouvoir manipuler les objets spécialisés dont ils dérivent.<br>
+<b>Fabrication Abstraite :</b> Utilisée pour ces familles d'objets.<br>
+  
